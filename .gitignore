@@ -151,6 +151,8 @@ TAGS
 # for amodal segmentation
 # we choose not to upload something too big
 # datasets 
-datasets/
+/datasets/
 # pytorch model
 *.pth
+# ignore the cocoapi
+/cocoapi/
