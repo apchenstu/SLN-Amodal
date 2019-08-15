@@ -1,5 +1,7 @@
 This is the code repo of SLN-Amodal.
 
+This repo has not finished up. 
+
 ## Author: 
 
 To be done
@@ -10,15 +12,14 @@ Follow the following instructions for step by step installation.
 
 #### Requirements
 
-pytorch == 0.4
+pytorch==0.4.0
 
-balabala
 
-#### Download COCOAPI
+#### Install [COCOAPI](https://github.com/cocodataset/cocoapi)
 ```bash
 pip install pycocotool
 ```
-We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when experimenting with COCO. The installation for python api could be briefly stated as :
+<!-- We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when experimenting with COCO. The installation for python api could be briefly stated as :
 
 - Go to [COCOAPI](https://github.com/cocodataset/cocoapi) to clone the repo. 
 
@@ -35,7 +36,7 @@ We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when expe
 ```bash
 ln -s ./cocoapi/PythonAPI/pycocotools ./pycocotools
 ```
-
+ -->
 
 
 ### Usage
