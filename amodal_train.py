@@ -4,12 +4,7 @@ import time
 import PIL.ImageDraw as ImageDraw
 import PIL.Image as Image
 
-# Download and install the Python COCO tools from https://github.com/waleedka/coco
-# That's a fork from the original https://github.com/pdollar/coco with a bug
-# fix for Python 3.
-# I submitted a pull request https://github.com/cocodataset/cocoapi/pull/50
-# If the PR is merged then use the original repo.
-# Note: Edit PythonAPI/Makefile and replace "python" with "python3".
+
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as maskUtils
@@ -531,8 +526,8 @@ if __name__ == '__main__':
                         metavar="/path/to/logs/",
                         help='Logs and checkpoints directory (default=logs/)')
     parser.add_argument('--limit', required=False,
-                        default=1,
-			type=int,
+                        default=-1,
+                        type=int,
                         metavar="<image count>",
                         help='Images to use for evaluation (default=500)')
     parser.add_argument('--download', required=False,

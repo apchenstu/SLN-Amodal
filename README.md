@@ -2,7 +2,7 @@ Learning Semantics-aware Distance Map with Semantics Layering Network
 
 ## Author: 
 
-balabala
+To be done
 
 ### Environment Requirement
 
