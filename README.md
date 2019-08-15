@@ -6,13 +6,15 @@ This repo has not been finished up.
 
 [Ziheng Zhang](https://arxiv.org/search/cs?searchtype=author&query=Zhang%2C+Z), [Anpei Chen](https://arxiv.org/search/cs?searchtype=author&query=Chen%2C+A), [Ling Xie](https://arxiv.org/search/cs?searchtype=author&query=Xie%2C+L), [Jingyi Yu](https://arxiv.org/search/cs?searchtype=author&query=Yu%2C+J), [Shenghua Gao](https://arxiv.org/search/cs?searchtype=author&query=Gao%2C+S)
 
-### Environment Requirement
+### Set up environment
 
-Follow the following instructions for step by step installation.
+We specify pytorch==0.4.0
 
-#### Requirements
+Or you can use Ananconda to create new environment in root directory by 
 
-pytorch==0.4.0
+```bash
+conda create -n SLN-env --file SLNenv.txt
+```
 
 
 #### Install [COCOAPI](https://github.com/cocodataset/cocoapi)
@@ -44,18 +46,12 @@ ln -s ./cocoapi/PythonAPI/pycocotools ./pycocotools
 In repo's root directory, type
 
 ```bash
-python exp_train.py 
+python exp_train.py  # for training.
 ```
-
-for training.
 
 ```bash
-python exp_test.py
+python exp_test.py  # for testing
 ```
-
-for testing
-
-
 
 ### Citation
 
