@@ -1,4 +1,4 @@
-Learning Semantics-aware Distance Map with Semantics Layering Network
+This is the code repo of SLN-Amodal.
 
 ## Author: 
 
@@ -6,7 +6,7 @@ To be done
 
 ### Environment Requirement
 
-follow the following instructions for step by step installation.
+Follow the following instructions for step by step installation.
 
 #### Requirements
 
@@ -15,6 +15,9 @@ pytorch == 0.4
 balabala
 
 #### Download COCOAPI
+```bash
+pip install pycocotool
+```
 We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when experimenting with COCO. The installation for python api could be briefly stated as :
 
 - Go to [COCOAPI](https://github.com/cocodataset/cocoapi) to clone the repo. 
