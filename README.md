@@ -1,4 +1,4 @@
-rning Semantics-aware Distance Map with Semantics Layering Network
+Learning Semantics-aware Distance Map with Semantics Layering Network
 
 ## Author: 
 
