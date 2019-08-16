@@ -83,7 +83,7 @@ For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amoda
     ```bash
     python amodal_test.py 
     ```
-    you can modify the path to your images folder inside the script.
+    you can modify the path to your image folder inside the script.
 
 ## Citation
 
