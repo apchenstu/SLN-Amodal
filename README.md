@@ -14,18 +14,18 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
 ## Set up environment
 
  1. We specify pytorch==0.4.0
- 
+
     Or you can use Ananconda to create new environment in root directory by
     ```bash
     conda create -n SLN-env --file SLNenv.txt
     ```
     
  2. Install [COCOAPI](https://github.com/cocodataset/cocoapi)
- 
+
     please follow the COCOAPI repository to install the data loader api, and then create a soft link from pycocotools folder to our root directory.
     ```bash
     ln -s /path/to/pycocotool /path/to/our/root/diectory
-  
+    
     ```
 
 ## Datasets
@@ -68,7 +68,7 @@ We also provide some [scripts](https://github.com/apchenstu/SLN-Amodal/tree/mast
 * For evaluate,
   ```bash
   python amodal_train.py evaluate --dataset ./datasetsets/coco_amodal --model ./checkpoints/COCOA.pth
-  python amodal_train.py evaluate --dataset ./datasetsets/D2S --model ./checkpoints/D2SA.pth
+  python amodal_train.py evaluate --dataset ./dataset/D2S --model ./checkpoints/D2SA.pth
   ```
   * Note: if you want to evaluate the pre-train models,
 For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
