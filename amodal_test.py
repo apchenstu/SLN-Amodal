@@ -1,44 +1,34 @@
 import os
 import skimage.io
 
-import coco
+
 import pickle
 import model as modellib
-import visualize
-
-import torch
-import torch.nn as nn
 from modal.deeplabv2 import *
-
+from amodal_train import Amodalfig
 
 # Root directory of the project
 ROOT_DIR = os.getcwd()
 
 # Directory to save logs and trained model
 MODEL_DIR = os.path.join(ROOT_DIR, "logs")
-
-
-# Path to trained weights file
-# Download this file and place in the root of your
-# project (See README file for details)
+IMAGE_DIR = os.path.join(ROOT_DIR, "images")
+IMAGE_DIR = './datasets/coco_amodal/val2014/'
 AMODAL_MODEL_PATH = './checkpoints/COCOA.pth'
 
 
-# Directory of images to run detection on
-IMAGE_DIR = os.path.join(ROOT_DIR, "images")
-
-IMAGE_DIR = './datasets/coco_amodal/val2014/'
-
-class InferenceConfig(coco.CocoConfig):
+class InferenceConfig(Amodalfig):
+    # Set batch size to 1 since we'll be running inference on
+    # one image at a time. Batch size = GPU_COUNT * IMAGES_PER_GPU
     GPU_COUNT = 1
     IMAGES_PER_GPU = 1
+    DETECTION_MIN_CONFIDENCE = 0
 
 config = InferenceConfig()
 config.display()
 
 # Create model object.
-num_classes = 1+1
-
+config.NUM_CLASSES = 1+1
 model = modellib.MaskRCNN(model_dir=MODEL_DIR, config=config)
 model.mask.conv1 = nn.Conv2d(439, 256, kernel_size=3, stride=1)
 model.mask.conv5 = nn.Conv2d(256, config.NUM_CLASSES, kernel_size=1, stride=1)
@@ -48,7 +38,7 @@ model.GLM_modual = DeepLabV2_ResNet101_MSC(182)
 model.current_epoch = 0
 
 # Load weights trained on MS-COCO
-model.load_state_dict(torch.load(AMODAL_MODEL_PATH))
+model.load_weights(AMODAL_MODEL_PATH)
 
 if config.GPU_COUNT:
     model = model.cuda()

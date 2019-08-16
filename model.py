@@ -12,13 +12,9 @@ import os, re
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data
-from tqdm import tqdm
 
-
-from amodal_train import  build_coco_results
 
 from tensorboardX import SummaryWriter
-from evaluate.amodalevalD2SA import AmodalEval
 from modal.loss import *
 from modal.modals import ResNet, FPN, RPN, Classifier, Mask
 
@@ -340,7 +336,6 @@ class MaskRCNN(nn.Module):
         if layers in layer_regex.keys():
             layers = layer_regex[layers]
 
-        # from evaluate.amodaleval import AmodalEval
         # Data generators
         train_set = Dataset(train_dataset, self.config, augment=True)
         train_generator = torch.utils.data.DataLoader(train_set, batch_size=self.config.BATCH_SIZE, shuffle=True,

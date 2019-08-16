@@ -4,11 +4,10 @@ import time
 import PIL.ImageDraw as ImageDraw
 import PIL.Image as Image
 
-
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as maskUtils
-from evaluate.amodalevalD2SA import AmodalEval
+from evaluate.amodalevalCOCOA import AmodalEval
 from modal import networks
 from tqdm import tqdm
 
@@ -527,7 +526,6 @@ if __name__ == '__main__':
                         help='Logs and checkpoints directory (default=logs/)')
     parser.add_argument('--limit', required=False,
                         default=-1,
-                        type=int,
                         metavar="<image count>",
                         help='Images to use for evaluation (default=500)')
     parser.add_argument('--download', required=False,

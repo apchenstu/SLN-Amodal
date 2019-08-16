@@ -1,10 +1,6 @@
 import torch
-import numpy as np
 import torch.nn.functional as F
 from torch.autograd import Variable
-from modal import networks
-import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
 
 
 ############################################################
@@ -115,36 +111,8 @@ def compute_mrcnn_bbox_loss(target_bbox, target_class_ids, pred_bbox):
     return loss
 
 def compute_amodal_loss( target_masks, target_class_ids,pred_masks):
-    # criterionGAN = networks.GANLoss()
-    # # Fake
-    # # stop backprop to the generator by detaching fake_B
-    # fake_AB = torch.cat((image_path, amodal_mask), 1)
-    # pred_fake = layer_netD.forward(fake_AB.detach())
-    # loss_D_fake = criterionGAN(pred_fake, False)
-    #
-    # # Real
-    # real_AB = torch.cat((image_path, target_mask), 1)
-    # pred_real = layer_netD.forward(real_AB)
-    #
-    # loss_D_real = criterionGAN(pred_real, True)
-    #
-    # # Combined loss
-    # loss_D = (loss_D_fake + loss_D_real) * 0.5
-
-    #### softmax + nll loss
-    # target_class_ids = target_class_ids.long()
-    # softmax_target = target_masks[:,0].long()
-    # for i in range(softmax_target.size(0)):
-    #     softmax_target[i,softmax_target[i]>0]  = target_class_ids[i]
-    # softmax_out = F.log_softmax(amodal_mask, dim=1)#.permute(0,2,3,1).contiguous().view(-1,amodal_mask.size(1))
-    # loss = F.nll_loss(softmax_out,softmax_target)
-    # y_pred = amodal_mask[:,target_class_ids.data]
-
-    ##### binary_cross_entropy
 
     positive_ix = torch.nonzero(target_class_ids > 0)[:, 0]
-    # positive_class_ids = target_class_ids[positive_ix.data].long()
-    # indices = torch.stack((positive_ix, positive_class_ids), dim=1)
 
     # Gather the masks (predicted and true) that contribute to loss
     y_true = target_masks[positive_ix].sum(dim=1)#- target_masks[indices[:,0].data,1]
