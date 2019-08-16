@@ -1,16 +1,16 @@
 This is the code repo of SLN-Amodal. Paper could be downloaded [here](https://arxiv.org/abs/1905.12898).
 
-This repo has not been finished up. 
+# This repo building is still in progress.
 
 ## Author: 
 
 [Ziheng Zhang](https://arxiv.org/search/cs?searchtype=author&query=Zhang%2C+Z), [Anpei Chen](https://arxiv.org/search/cs?searchtype=author&query=Chen%2C+A), [Ling Xie](https://arxiv.org/search/cs?searchtype=author&query=Xie%2C+L), [Jingyi Yu](https://arxiv.org/search/cs?searchtype=author&query=Yu%2C+J), [Shenghua Gao](https://arxiv.org/search/cs?searchtype=author&query=Gao%2C+S)
 
-### Set up environment
+## Set up environment
 
 We specify pytorch==0.4.0
 
-Or you can use Ananconda to create new environment in root directory by 
+Or you can use [Anaconda](https://www.anaconda.com) to create new environment in root directory by 
 
 ```bash
 conda create -n SLN-env --file SLNenv.txt
@@ -19,9 +19,9 @@ conda create -n SLN-env --file SLNenv.txt
 
 #### Install [COCOAPI](https://github.com/cocodataset/cocoapi)
 ```bash
-pip install pycocotool
+pip install pycocotool # don't use this because pip version is buggy
 ```
-<!-- We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when experimenting with COCO. The installation for python api could be briefly stated as :
+We use [COCOAPI](https://github.com/cocodataset/cocoapi) to fetch data when experimenting with COCO. The installation for python api could be briefly stated as :
 
 - Go to [COCOAPI](https://github.com/cocodataset/cocoapi) to clone the repo. 
 
@@ -36,10 +36,8 @@ pip install pycocotool
 - Link the api to root file directory
 
 ```bash
-ln -s ./cocoapi/PythonAPI/pycocotools ./pycocotools
+ln -s path-to-cocoapi-repo/cocoapi/PythonAPI/pycocotools .path-to-SLN-repo/pycocotools
 ```
- -->
-
 
 ### Usage
 
