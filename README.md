@@ -3,6 +3,10 @@ This is the code repo of SLN-Amodal. Paper could be downloaded [here](https://ar
 
 This repository is in large parts based on Multimodallearning's [Mask_RCNN](https://github.com/multimodallearning/pytorch-mask-rcnn),  we also borrow the amodal evaluation code  from paper [AmodalMask](https://github.com/Wakeupbuddy/amodalAPI) and [COCO API](https://github.com/cocodataset/cocoapi).  The training and evaluation dataset are referenced from [COCOA](https://arxiv.org/abs/1509.01329) and [D2SA](https://arxiv.org/abs/1804.08864).  Here we want to thank each of them for their kindly work.
 
+# SLN
+
+In this work, we demonstrate yet another approach to tackle the amodal segmentation problem. Specifically, we first introduce a new representation, namely a semantics-aware distance map (sem-dist map), to serve as our target for amodal segmentation instead of the commonly used masks and heatmaps. The sem-dist map is a kind of level-set representation, of which the different regions of an object are placed into different levels on the map according to their visibility. It is a natural extension of masks and heatmaps, where modal, amodal segmentation, as well as depth order information, are all well-described. Then we also introduce a novel convolutional neural network (CNN) architecture, which we refer to as semantic layering network, to estimate sem-dist maps layer by layer, from the global-level to the instance-level, for all objects in an image. Extensive experiments on the COCOA and D2SA datasets have demonstrated that our framework can predict amodal segmentation, occlusion and depth order with state-of-the-art performance.
+
 ![](https://github.com/apchenstu/SLN-Amodal/blob/master/results/sem-dist-map-demo.png)
 ## Authors: 
 [Ziheng Zhang*](https://arxiv.org/search/cs?searchtype=author&query=Zhang%2C+Z), [Anpei Chen*](https://arxiv.org/search/cs?searchtype=author&query=Chen%2C+A), [Ling Xie](https://arxiv.org/search/cs?searchtype=author&query=Xie%2C+L), [Jingyi Yu](https://arxiv.org/search/cs?searchtype=author&query=Yu%2C+J), [Shenghua Gao](https://arxiv.org/search/cs?searchtype=author&query=Gao%2C+S)
@@ -17,6 +21,9 @@ This repository is in large parts based on Multimodallearning's [Mask_RCNN](http
   please follow the COCOAPI repository to install the data loader api, and then create a soft link from pycocotools folder to our root directory.
       ```bash
     ln -s /path/to/pycocotool /path/to/our/root/diectory
+  
+    ```
+  
     ```
 
 ## Datasets
@@ -75,7 +82,7 @@ For COCOA dataset, please make sure,  [L11](https://github.com/apchenstu/SLN-Amo
     python amodal_test.py 
     ```
     you can modify the path to your images folder inside the script.
-  
+
 ## Citation
 
 If you find this code useful to your research, please consider citing:
