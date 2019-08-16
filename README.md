@@ -27,8 +27,6 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
     ln -s /path/to/pycocotool /path/to/our/root/diectory
   
     ```
-  
-    ```
 
 ## Datasets
 * Download pre-trained  [weights](https://drive.google.com/open?id=1ZCeAXqRbsoJDdaJNMWu1uCEfxtk8g9rB) and unzip the package to the root directory.
