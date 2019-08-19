@@ -1,7 +1,7 @@
 
 This is the code repo of SLN-Amodal. Paper could be downloaded [here](https://arxiv.org/abs/1905.12898).
 
-This repository is in large parts based on Multimodallearning's [Mask_RCNN](https://github.com/multimodallearning/pytorch-mask-rcnn),  we also borrow the amodal evaluation code from [AmodalMask](https://github.com/Wakeupbuddy/amodalAPI) and [COCO API](https://github.com/cocodataset/cocoapi).  The training and evaluation dataset are referenced from [COCOA](https://arxiv.org/abs/1509.01329) and [D2SA](https://arxiv.org/abs/1804.08864).  We want to thank each of them for their kindly work.
+This repository is in large parts based on Multimodallearning's [Mask_RCNN](https://github.com/multimodallearning/pytorch-mask-rcnn),  we also borrow the amodal evaluation code from [AmodalMask](https://github.com/Wakeupbuddy/amodalAPI) and [COCO API](https://github.com/cocodataset/cocoapi).  The training and evaluation dataset are referenced from [COCOA](https://arxiv.org/abs/1509.01329) and [D2SA](https://arxiv.org/abs/1804.08864).  We would like to thank each of them for their kindly work.
 
 # SLN
 
