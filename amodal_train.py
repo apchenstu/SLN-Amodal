@@ -7,7 +7,6 @@ import PIL.Image as Image
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from pycocotools import mask as maskUtils
-from evaluate.amodalevalCOCOA import AmodalEval
 from modal import networks
 from tqdm import tqdm
 
@@ -21,7 +20,7 @@ from modal.Functions import *
 
 # Root directory of the project
 ROOT_DIR = os.getcwd()
-
+AmodalEval = None
 # Path to trained weights file
 COCO_MODEL_PATH = "./checkpoints/mask_rcnn_coco.pth"
 GLM_MODEL_PATH = "./checkpoints/deeplabv2.pth"
@@ -401,9 +400,13 @@ def build_coco_results(dataset, image_ids, rois, class_ids, scores, masks):
     return results
 
 
-def evalute_amodal(amodalGt, model, limit=-1, image_ids=None):
+def evalute_amodal(amodalGt, model, limit=-1, image_ids=None,args=args):
     # Pick COCO images from the dataset
     image_ids = image_ids or amodalGt.image_ids
+    if 'COCOA' == args.data_type:
+        from evaluate.amodalevalCOCOA import AmodalEval
+    else:
+        from evaluate.amodalevalD2SA import AmodalEval
 
     # Limit to a subset
     if limit:
@@ -545,6 +548,8 @@ if __name__ == '__main__':
                         help='momentum for sgd, beta1 for adam')
     parser.add_argument('--layer_weight_decay', default=1e-4, type=float,
                         help='weights regularizer')
+    parser.add_argument('--data_type', default='COCOA', type=str,
+                        help='data type, COCOA or D2SA')
 
     args = parser.parse_args()
     print("Command: ", args.command)
@@ -660,11 +665,10 @@ if __name__ == '__main__':
 
 
     elif args.command == "evaluate":
-
         dataset_val = AmodalDataset()
         dataset_val.load_amodal(args.dataset, "val", year=args.year)
         dataset_val.prepare()
-        evalute_amodal(dataset_val, model, limit=args.limit)
+        evalute_amodal(dataset_val, model, limit=args.limit,args=args)
 
     else:
         print("'{}' is not recognized. "
