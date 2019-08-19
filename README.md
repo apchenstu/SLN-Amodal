@@ -12,7 +12,6 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
 ## Authors: 
 [Ziheng Zhang*](https://arxiv.org/search/cs?searchtype=author&query=Zhang%2C+Z), [Anpei Chen*](https://arxiv.org/search/cs?searchtype=author&query=Chen%2C+A), [Ling Xie](https://arxiv.org/search/cs?searchtype=author&query=Xie%2C+L), [Jingyi Yu](https://arxiv.org/search/cs?searchtype=author&query=Yu%2C+J), [Shenghua Gao](https://arxiv.org/search/cs?searchtype=author&query=Gao%2C+S)
 ## Set up environment
-
  1. We specify pytorch==0.4.0
 
     Or you can use Ananconda to create new environment in root directory by
@@ -67,18 +66,20 @@ We also provide some [scripts](https://github.com/apchenstu/SLN-Amodal/tree/mast
 
 * For evaluate,
   ```bash
-  python amodal_train.py evaluate --dataset ./datasets/coco_amodal --model ./checkpoints/COCOA.pth
-  python amodal_train.py evaluate --dataset ./datasets/D2S --model ./checkpoints/D2SA.pth
+  python amodal_train.py evaluate --dataset ./datasets/coco_amodal --model ./checkpoints/COCOA.pth --data_type COCOA
+  python amodal_train.py evaluate --dataset ./datasets/D2S --model ./checkpoints/D2SA.pth --data_tyep D2SA
   ```
-  * Note: if you want to evaluate the pre-train models,
+  <!-- * Note: if you want to evaluate the pre-train models,
 For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
+    
     ```bash
     from evaluate.amodalevalCOCOA import AmodalEval
     ```
     For D2SA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
     ```bash
     from evaluate.amodalevalD2SA import AmodalEval
-    ```
+    ``` -->
+  
  * For test images,
     ```bash
     python amodal_test.py 
@@ -88,7 +89,7 @@ For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amoda
 ## Citation
 
 If you find this code useful to your research, please consider citing:
-```
+```tex
 @inproceedings{zhang2019amodal,
   title={Learning Semantics-aware Distance Map with Semantics Layering Network for Amodal Instance Segmentation},
   author={Zhang, Zi-Heng and Chen, An-Pei and Xie, Ling and Yu, Jing-Yi and Gao, Sheng-Hua},
