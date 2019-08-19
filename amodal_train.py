@@ -666,7 +666,7 @@ if __name__ == '__main__':
 
     elif args.command == "evaluate":
         dataset_val = AmodalDataset()
-        dataset_val.load_amodal(args.dataset, "val", year=args.year, data_type=args.data_type)
+        dataset_val.load_amodal(args.dataset, "val", year=args.year)
         dataset_val.prepare()
         evalute_amodal(dataset_val, model, limit=args.limit,args=args)
 
