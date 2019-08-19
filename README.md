@@ -69,7 +69,8 @@ We also provide some [scripts](https://github.com/apchenstu/SLN-Amodal/tree/mast
   python amodal_train.py evaluate --dataset ./datasets/coco_amodal --model ./checkpoints/COCOA.pth --data_type COCOA
   python amodal_train.py evaluate --dataset ./datasets/D2S --model ./checkpoints/D2SA.pth --data_tyep D2SA
   ```
-  <!-- * Note: if you want to evaluate the pre-train models,
+<!-- 
+  * Note: if you want to evaluate the pre-train models,
 For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
     
     ```bash
@@ -78,7 +79,8 @@ For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amoda
     For D2SA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
     ```bash
     from evaluate.amodalevalD2SA import AmodalEval
-    ``` -->
+    ``` 
+-->
   
  * For test images,
     ```bash
