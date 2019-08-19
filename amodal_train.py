@@ -400,7 +400,7 @@ def build_coco_results(dataset, image_ids, rois, class_ids, scores, masks):
     return results
 
 
-def evalute_amodal(amodalGt, model, limit=-1, image_ids=None,args=args):
+def evalute_amodal(amodalGt, model, limit=-1, image_ids=None):
     # Pick COCO images from the dataset
     image_ids = image_ids or amodalGt.image_ids
     if 'COCOA' == args.data_type:
