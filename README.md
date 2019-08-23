@@ -19,12 +19,11 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
     conda create -n SLN-env --file SLNenv.txt
     ```
     
- 2. Install [COCOAPI](https://github.com/cocodataset/cocoapi)
+ 2. Configure [COCOAPI](https://github.com/cocodataset/cocoapi)
 
-    please follow the COCOAPI repository to install the data loader api, and then create a soft link from pycocotools folder to our root directory.
+    We modify the [COCOAPI](https://github.com/cocodataset/cocoapi) to meet our need. Here you have to soft link the pycocotool to the root directory for invoking.
     ```bash
     ln -s /path/to/pycocotool /path/to/our/root/diectory
-    
     ```
 
 ## Datasets
@@ -79,7 +78,7 @@ For COCOA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amoda
     For D2SA dataset, please make sure [L10](https://github.com/apchenstu/SLN-Amodal/blob/master/amodal_train.py#L10) is
     ```bash
     from evaluate.amodalevalD2SA import AmodalEval
-    ``` 
+    ```
 -->
   
  * For test images,
