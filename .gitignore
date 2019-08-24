@@ -153,5 +153,6 @@ TAGS
 # we choose not to upload something too big
 # datasets 
 /datasets/
+!/datasets/.gitkeep
 # pytorch model
 *.pth
