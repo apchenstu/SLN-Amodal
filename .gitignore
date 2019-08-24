@@ -29,7 +29,8 @@ env
 *.obj
 
 # Compiled Dynamic libraries
-*.so
+# can not ignore roi align, tks to @Julian
+# *.so
 *.dylib
 *.dll
 
