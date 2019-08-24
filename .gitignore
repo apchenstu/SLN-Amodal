@@ -154,5 +154,3 @@ TAGS
 /datasets/
 # pytorch model
 *.pth
-# ignore the cocoapi
-/cocoapi/
