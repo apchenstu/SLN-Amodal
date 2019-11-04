@@ -14,9 +14,14 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
 ## Set up environment
  1. We specify pytorch==0.4.0
 
-    Or you can use Ananconda to create new environment in root directory by
+    Or you can use Ananconda to create new environment(strongly recommanded) in root directory by
     ```bash
-    conda create -n SLN-env --file SLNenv.txt
+    conda create -n SLN-env
+    conda install pytorch=0.4.0 cuda90 -c pytorch
+    conda install -c conda-forge scikit-image
+    conda install -c anaconda cudatoolkit==9.0
+    conda install tqdm
+    pip install tensorboardX
     ```
     
  2. Configure [COCOAPI](https://github.com/cocodataset/cocoapi)
