@@ -2,7 +2,6 @@
 This is the code repo of SLN-Amodal. Paper could be downloaded [here](https://arxiv.org/abs/1905.12898).
 
 This repository is in large parts based on Multimodallearning's [Mask_RCNN](https://github.com/multimodallearning/pytorch-mask-rcnn),  we also borrow the amodal evaluation code from [AmodalMask](https://github.com/Wakeupbuddy/amodalAPI) and [COCO API](https://github.com/cocodataset/cocoapi).  The training and evaluation dataset are referenced from [COCOA](https://arxiv.org/abs/1509.01329) and [D2SA](https://arxiv.org/abs/1804.08864).  We would like to thank each of them for their kindly work.
-[BaiduYunPan](https://pan.baidu.com/s/1zyJAXZmNw5lFdr3DBuaYiQ) link with verify code:yr2i
 
 # SLN
 
@@ -36,6 +35,7 @@ In this work, we demonstrate yet another approach to tackle the amodal segmentat
 * Download pre-trained  [weights](https://drive.google.com/open?id=1ZCeAXqRbsoJDdaJNMWu1uCEfxtk8g9rB) and unzip the package to the root directory.
 * we provide layer based [D2SA](https://drive.google.com/open?id=1Y3fHrEmtfri3vZt3ehahL76EXtkfijtN) and [COCOA](https://drive.google.com/open?id=1jLT4zODCoXfO7U6bc-w171xty8fGCY8t) dataset.
 We also provide some [scripts](https://github.com/apchenstu/SLN-Amodal/tree/master/scripts) that you can convert the original amodal annotation [[COCOA](https://drive.google.com/file/d/0B8e3LNo7STslUGRFUVlQSnZRUVE/view?usp=drive_open),[D2SA](https://www.mvtec.com/company/research/datasets/mvtec-d2s/)] to our layer based annotation. If you find those two dataset are useful, please cite their [COCOA](https://arxiv.org/abs/1509.01329) and [D2SA](https://arxiv.org/abs/1804.08864) papers.
+* [BaiduYunPan](https://pan.baidu.com/s/1zyJAXZmNw5lFdr3DBuaYiQ) link with verify code:yr2i
 * Folder structure
   ```
 	├──  datasets                       - dataset folder
