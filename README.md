@@ -66,7 +66,7 @@ We also provide some [scripts](https://github.com/apchenstu/SLN-Amodal/tree/mast
 
   ```bash
   python amodal_train.py train --dataset ./datasets/coco_amodal --model coco
-  python amodal_train.py train --dataset ./datasets/D2S --model D2S
+  python amodal_train.py train --dataset ./datasets/D2S --model coco
   ```
 
 * For evaluate,
